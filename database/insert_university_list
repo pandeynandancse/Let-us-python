@@ -1,0 +1,44 @@
+import urllib.request
+import urllib.parse
+import urllib.error
+import ssl
+from bs4 import BeautifulSoup
+import MySQLdb
+
+conn = MySQLdb.connect("localhost","sammy","Pkp82@82","exam")
+cur = conn.cursor()
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+x=[]
+u =[]
+cur.execute('''CREATE TABLE IF NOT EXISTS Universities (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, university varchar(1500))''')
+univ = urllib.request.urlopen('http://python-data.dr-chuck.net/' + 'geojson')
+
+p=0
+for i in univ:
+	x.append(i.decode())
+	x.append("\n")
+for j in x:
+	if j == '[\n':
+		continue
+	elif j =="\n":
+		continue
+	else:
+		u.append(j.strip().split(",")[0])
+q = len(u)
+for f in u:
+
+    print(type(f))
+    
+    p = p+1
+    if(p >= 298):
+    	break
+    cur.execute('''INSERT INTO Universities(university) VALUES( %s )''',( f , ))
+    
+
+
+conn.commit()
+cur.close()
+	
