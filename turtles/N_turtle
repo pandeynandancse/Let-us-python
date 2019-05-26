@@ -1,0 +1,18 @@
+import turtle
+s = turtle.Screen()
+a=turtle.Turtle()
+a.pensize(5)
+a.speed(1)
+a.left(90)
+a.forward(100)
+
+a.color('blue')
+a.right(145)
+a.forward(100)
+
+a.color('yellow')
+a.left(145)
+a.forward(100)
+
+a.color('red')
+
