@@ -1,0 +1,6 @@
+turtle.bye()
+
+or
+
+
+turtle.Screen().bye()
