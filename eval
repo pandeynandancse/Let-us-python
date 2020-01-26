@@ -1,0 +1,56 @@
+https://towardsdatascience.com/python-eval-built-in-function-601f87db191
+
+
+
+eval function evaluates the “String”
+
+1.
+input = input("Enter any number of your choice:")
+print(input)
+print(type(input))
+--------------------------------------------------------------------Enter any number of your choice: 10 + 10 
+10 + 10 
+<class 'str'>
+
+
+
+
+
+
+
+2.
+eval = eval(input("Enter any number of your choice"))
+print(eval)
+print(type(eval))
+--------------------------------------------------------------------Enter any number of your choice: 10 + 10 
+20 
+<class 'int'>
+
+
+
+
+
+
+
+
+
+3.
+evaluate = input(“Enter what operation x has to perform: “)
+print(evaluate)
+print(type(evaluate))
+--------------------------------------------------------------------
+Enter what operation x has to perform: x + x + 100 - 35 + 5 * 80 
+x + x + 100 - 35 + 5 * 80 
+<class 'str'>
+
+x = 10
+print(type(x))
+--------------------------------------------------------------------
+<class 'int'>
+
+expression = eval(evaluate)
+print(expression)
+print(type(expression))
+--------------------------------------------------------------------
+485 
+<class 'int'>
