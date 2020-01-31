@@ -1,0 +1,2 @@
+x,y=map(int,input().split())  /// by default split on space
+print(type(x))                  /// int
