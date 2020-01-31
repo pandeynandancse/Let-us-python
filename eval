@@ -54,3 +54,18 @@ print(type(expression))
 --------------------------------------------------------------------
 485 
 <class 'int'>
+
+
+
+
+
+
+
+
+
+4. (x,y) = eval(input("Enter two numbers and they will mapped to x and y via eval"))
+
+
+
+
+5 x = eval(input("Enter number that will be string but converted  in int and stored in x via eval"))
