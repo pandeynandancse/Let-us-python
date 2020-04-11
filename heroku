@@ -1,0 +1,46 @@
+for deployment of python apps on heroku----
+
+a) Install gunicorn locally ---->>>>    pipenv install gunicorn
+                                        or
+                                        pip install gunicorn
+                                        
+                                        
+                                        
+                                        
+b) Install heroku cli    ----->>>>      curl https://cli-assets.heroku.com/install.sh | sh
+
+            link : https://devcenter.heroku.com/articles/heroku-cli#verifying-your-installation
+            
+     
+c) login on heroku  ----->>>>>>    heroku login
+                                   or
+                                   heroku login -i
+                                   
+      
+d) create app ----->>>>>> heroku create appname
+
+e) create database    ---->>    heroku addons:create heroku-postgresql:hobby-dev --app appname
+
+
+f) get URI of Database       ----->>>>>    heroku config --app appname
+
+
+g) Deploy with git       ------>>>>>  git init
+                                      git add . && git commit -m 'Deploy'
+                                      heroku git:remote -a appname
+                                      git push heroku master
+
+
+
+h) Add table to remote database    ---->>>> 
+
+                                            heroku run python
+                                            >>> from app import db
+                                            >>> db.create_all()
+                                            >>>exit()
+                                            
+                                            
+                                            
+                                            
+                    
+ i) visit app                           --->> heroku open
