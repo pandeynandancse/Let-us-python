@@ -44,3 +44,28 @@ h) Add table to remote database    ---->>>>
                                             
                     
  i) visit app                           --->> heroku open
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+once u deployed app and now u want to update  it and push then follow below steps:
+
+                         a) heroku login
+
+                             Clone the repository
+                             Use Git to clone app's source code to your local machine.
+
+                         b) $ heroku git:clone -a pandeynandancse
+                         c) $ cd pandeynandancse
+
+                             Deploy your changes
+                             Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+                         d) $ git add .
+                         e) $ git commit -am "make it better"
+                         f) $ git push heroku master
