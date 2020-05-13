@@ -1,0 +1,11 @@
+In python 3.*.*
+
+
+a) 
+    pip install pyaudio -> error
+    sudo apt-get install portaudio19-dev -> success
+    pip install pyaudio -> success
+
+
+
+
