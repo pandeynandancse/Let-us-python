@@ -9,3 +9,5 @@ apt-get install python3-venv
     Run python3 -m venv <name_of_virtualenv i.e. corona_venv>
     cd corona_venv/
     . bin/activate
+    
+    You can deactivate a venv by typing “deactivate” in your shell
