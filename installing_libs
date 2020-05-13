@@ -9,3 +9,14 @@ a)
 
 
 
+b) how to install requirements.txt i.e. created from virtual environment of project via pip freeze > requirements.txt
+   
+   
+    cd to the directory where requirements.txt is located.
+    activate your virtualenv.
+    run: pip install -r requirements.txt in your shell.
+    
+    
+    
+    
+    
