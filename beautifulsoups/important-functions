@@ -1,0 +1,56 @@
+#first solution
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://fisheries.msc.org/en/fisheries/aafa-and-wfoa-north-pacific-albacore-tuna/@@view'
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+results = soup.find("div", attrs={"class":'slab fishery-specs'}).find_all('p')
+print(results)
+
+
+===========================================================================================
+
+
+
+#second solution
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://fisheries.msc.org/en/fisheries/aafa-and-wfoa-north-pacific-albacore-tuna/@@view'
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+results = soup.find_all("div", attrs={'class': 'fishery-spec'})
+
+output = None
+
+for each_result in results:
+    if(each_result.find('h5').text == 'Tonnage'):
+        output = each_result.find('p').text
+        break
+
+print(output)
+=======================================================================
+
+
+
+
+#3rd solution
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://fisheries.msc.org/en/fisheries/aafa-and-wfoa-north-pacific-albacore-tuna/@@view'
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+results = soup.select(".fishery-spec p")[-1].text
+
+print(results)
